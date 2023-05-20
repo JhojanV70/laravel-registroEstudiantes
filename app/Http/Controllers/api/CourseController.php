@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -12,7 +14,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $cursos = DB::table('courses')
+        ->select('courses.*')
+        ->get();
+        return json_encode(['cursos'=>$cursos]);
     }
 
     /**
