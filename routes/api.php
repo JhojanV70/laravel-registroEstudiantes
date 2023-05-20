@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Http\Controllers\api\CourseController;
 use App\Http\Controllers\api\StudentController;
+use App\Http\Controllers\api\QuerieController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/cursos',[CourseController::class,'index'])->name('cursos');
 
 Route::get('/estudiantes',[StudentController::class,'index'])->name('estudiantes');
+
+Route::get('/Consultas',[QuerieController::class,'index'])->name('Consultas');
