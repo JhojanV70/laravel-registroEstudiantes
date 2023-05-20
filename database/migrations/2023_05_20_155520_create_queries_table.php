@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('queries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('students_id')
+            $table->foreignId('student_id')
                 ->references('id')
                 ->on('students');
             $table->foreignId('course_id')
